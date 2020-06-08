@@ -24,5 +24,9 @@ namespace DijkstraAlgorithm
         {
             InitializeComponent();
         }
+
+        private void Node00_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }

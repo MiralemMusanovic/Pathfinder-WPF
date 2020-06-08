@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DijkstraAlgorithm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="500">
+        Title="MainWindow" Height="290" Width="520">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50" />
@@ -18,9 +18,7 @@
             <ColumnDefinition Width="50" />
             <ColumnDefinition Width="50" />
             <ColumnDefinition Width="50" />
-            
-          
-            
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
@@ -28,64 +26,95 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
-            
 
         </Grid.RowDefinitions>
+        
+        <Button x:Name="Node00" Click="Node00_Click" Margin="2" Grid.Column="0">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="DarkOrange"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="Node01" Click="Node00_Click" Margin="2" Grid.Column="1">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="DarkOrange"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="Node02" Margin="2" Grid.Column="2"></Button>
+        <Button x:Name="Node03" Margin="2" Grid.Column="3"></Button>
+        <Button x:Name="Node04" Margin="2" Grid.Column="4"></Button>
+        <Button x:Name="Node05" Margin="2" Grid.Column="5"></Button>
+        <Button x:Name="Node06" Margin="2" Grid.Column="6"></Button>
+        <Button x:Name="Node07" Margin="2" Grid.Column="7"></Button>
+        <Button x:Name="Node08" Margin="2" Grid.Column="8"></Button>
+        <Button x:Name="Node09" Margin="2" Grid.Column="9"></Button>
 
-        <Button x:Name="Node00" Grid.Column="0"></Button>
-        <Button x:Name="Node01" Grid.Column="1"></Button>
-        <Button x:Name="Node02" Grid.Column="2"></Button>
-        <Button x:Name="Node03" Grid.Column="3"></Button>
-        <Button x:Name="Node04" Grid.Column="4"></Button>
-        <Button x:Name="Node05" Grid.Column="5"></Button>
-        <Button x:Name="Node06" Grid.Column="6"></Button>
-        <Button x:Name="Node07" Grid.Column="7"></Button>
-        <Button x:Name="Node08" Grid.Column="8"></Button>
-        <Button x:Name="Node09" Grid.Column="9"></Button>
+        <Button x:Name="Node10" Margin="2" Grid.Row="1" Grid.Column="0"></Button>
+        <Button x:Name="Node11" Margin="2" Grid.Row="1" Grid.Column="1"></Button>
+        <Button x:Name="Node12" Margin="2" Grid.Row="1" Grid.Column="2"></Button>
+        <Button x:Name="Node13" Margin="2" Grid.Row="1" Grid.Column="3"></Button>
+        <Button x:Name="Node14" Margin="2" Grid.Row="1" Grid.Column="4"></Button>
+        <Button x:Name="Node15" Margin="2" Grid.Row="1" Grid.Column="5"></Button>
+        <Button x:Name="Node16" Margin="2" Grid.Row="1" Grid.Column="6"></Button>
+        <Button x:Name="Node17" Margin="2" Grid.Row="1" Grid.Column="7"></Button>
+        <Button x:Name="Node18" Margin="2" Grid.Row="1" Grid.Column="8"></Button>
+        <Button x:Name="Node19" Margin="2" Grid.Row="1" Grid.Column="9"></Button>
 
-        <Button x:Name="Node10" Grid.Row="1" Grid.Column="0"></Button>
-        <Button x:Name="Node11" Grid.Row="1" Grid.Column="1"></Button>
-        <Button x:Name="Node12" Grid.Row="1" Grid.Column="2"></Button>
-        <Button x:Name="Node13" Grid.Row="1" Grid.Column="3"></Button>
-        <Button x:Name="Node14" Grid.Row="1" Grid.Column="4"></Button>
-        <Button x:Name="Node15" Grid.Row="1" Grid.Column="5"></Button>
-        <Button x:Name="Node16" Grid.Row="1" Grid.Column="6"></Button>
-        <Button x:Name="Node17" Grid.Row="1" Grid.Column="7"></Button>
-        <Button x:Name="Node18" Grid.Row="1" Grid.Column="8"></Button>
-        <Button x:Name="Node19" Grid.Row="1" Grid.Column="9"></Button>
+        <Button x:Name="Node20" Margin="2" Grid.Row="2" Grid.Column="0"></Button>
+        <Button x:Name="Node21" Margin="2" Grid.Row="2" Grid.Column="1"></Button>
+        <Button x:Name="Node22" Margin="2" Grid.Row="2" Grid.Column="2"></Button>
+        <Button x:Name="Node23" Margin="2" Grid.Row="2" Grid.Column="3"></Button>
+        <Button x:Name="Node24" Margin="2" Grid.Row="2" Grid.Column="4"></Button>
+        <Button x:Name="Node25" Margin="2" Grid.Row="2" Grid.Column="5"></Button>
+        <Button x:Name="Node26" Margin="2" Grid.Row="2" Grid.Column="6"></Button>
+        <Button x:Name="Node27" Margin="2" Grid.Row="2" Grid.Column="7"></Button>
+        <Button x:Name="Node28" Margin="2" Grid.Row="2" Grid.Column="8"></Button>
+        <Button x:Name="Node29" Margin="2" Grid.Row="2" Grid.Column="9"></Button>
 
-        <Button x:Name="Node20" Grid.Row="2" Grid.Column="0"></Button>
-        <Button x:Name="Node21" Grid.Row="2" Grid.Column="1"></Button>
-        <Button x:Name="Node22" Grid.Row="2" Grid.Column="2"></Button>
-        <Button x:Name="Node23" Grid.Row="2" Grid.Column="3"></Button>
-        <Button x:Name="Node24" Grid.Row="2" Grid.Column="4"></Button>
-        <Button x:Name="Node25" Grid.Row="2" Grid.Column="5"></Button>
-        <Button x:Name="Node26" Grid.Row="2" Grid.Column="6"></Button>
-        <Button x:Name="Node27" Grid.Row="2" Grid.Column="7"></Button>
-        <Button x:Name="Node28" Grid.Row="2" Grid.Column="8"></Button>
-        <Button x:Name="Node29" Grid.Row="2" Grid.Column="9"></Button>
+        <Button x:Name="Node30" Margin="2" Grid.Row="3" Grid.Column="0"></Button>
+        <Button x:Name="Node31" Margin="2" Grid.Row="3" Grid.Column="1"></Button>
+        <Button x:Name="Node32" Margin="2" Grid.Row="3" Grid.Column="2"></Button>
+        <Button x:Name="Node33" Margin="2" Grid.Row="3" Grid.Column="3"></Button>
+        <Button x:Name="Node34" Margin="2" Grid.Row="3" Grid.Column="4"></Button>
+        <Button x:Name="Node35" Margin="2" Grid.Row="3" Grid.Column="5"></Button>
+        <Button x:Name="Node36" Margin="2" Grid.Row="3" Grid.Column="6"></Button>
+        <Button x:Name="Node37" Margin="2" Grid.Row="3" Grid.Column="7"></Button>
+        <Button x:Name="Node38" Margin="2" Grid.Row="3" Grid.Column="8"></Button>
+        <Button x:Name="Node39" Margin="2" Grid.Row="3" Grid.Column="9"></Button>
 
-        <Button x:Name="Node30" Grid.Row="3" Grid.Column="0"></Button>
-        <Button x:Name="Node31" Grid.Row="3" Grid.Column="1"></Button>
-        <Button x:Name="Node32" Grid.Row="3" Grid.Column="2"></Button>
-        <Button x:Name="Node33" Grid.Row="3" Grid.Column="3"></Button>
-        <Button x:Name="Node34" Grid.Row="3" Grid.Column="4"></Button>
-        <Button x:Name="Node35" Grid.Row="3" Grid.Column="5"></Button>
-        <Button x:Name="Node36" Grid.Row="3" Grid.Column="6"></Button>
-        <Button x:Name="Node37" Grid.Row="3" Grid.Column="7"></Button>
-        <Button x:Name="Node38" Grid.Row="3" Grid.Column="8"></Button>
-        <Button x:Name="Node39" Grid.Row="3" Grid.Column="9"></Button>
-
-        <Button x:Name="Node40" Grid.Row="4" Grid.Column="0"></Button>
-        <Button x:Name="Node41" Grid.Row="4" Grid.Column="1"></Button>
-        <Button x:Name="Node42" Grid.Row="4" Grid.Column="2"></Button>
-        <Button x:Name="Node43" Grid.Row="4" Grid.Column="3"></Button>
-        <Button x:Name="Node44" Grid.Row="4" Grid.Column="4"></Button>
-        <Button x:Name="Node45" Grid.Row="4" Grid.Column="5"></Button>
-        <Button x:Name="Node46" Grid.Row="4" Grid.Column="6"></Button>
-        <Button x:Name="Node47" Grid.Row="4" Grid.Column="7"></Button>
-        <Button x:Name="Node48" Grid.Row="4" Grid.Column="8"></Button>
-        <Button x:Name="Node49" Grid.Row="4" Grid.Column="9"></Button>
+        <Button x:Name="Node40" Margin="2" Grid.Row="4" Grid.Column="0"></Button>
+        <Button x:Name="Node41" Margin="2" Grid.Row="4" Grid.Column="1"></Button>
+        <Button x:Name="Node42" Margin="2" Grid.Row="4" Grid.Column="2"></Button>
+        <Button x:Name="Node43" Margin="2" Grid.Row="4" Grid.Column="3"></Button>
+        <Button x:Name="Node44" Margin="2" Grid.Row="4" Grid.Column="4"></Button>
+        <Button x:Name="Node45" Margin="2" Grid.Row="4" Grid.Column="5"></Button>
+        <Button x:Name="Node46" Margin="2" Grid.Row="4" Grid.Column="6"></Button>
+        <Button x:Name="Node47" Margin="2" Grid.Row="4" Grid.Column="7"></Button>
+        <Button x:Name="Node48" Margin="2" Grid.Row="4" Grid.Column="8"></Button>
+        <Button x:Name="Node49" Margin="2" Grid.Row="4" Grid.Column="9"></Button>
 
 
     </Grid>
