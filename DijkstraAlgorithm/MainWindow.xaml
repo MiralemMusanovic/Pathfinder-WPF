@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DijkstraAlgorithm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="750" Width="1500">
+        Title="MainWindow" Height="250" Width="500">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50" />
@@ -18,26 +18,8 @@
             <ColumnDefinition Width="50" />
             <ColumnDefinition Width="50" />
             <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
-            <ColumnDefinition Width="50" />
+            
+          
             
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -46,27 +28,65 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
+            
 
         </Grid.RowDefinitions>
 
-        <Button>Button 1</Button>
-        <Button Grid.Column="1">Button 2</Button>
-        <Button Grid.Column="2">Button 3</Button>
-        <Button Grid.Row="1">Button 4</Button>
-        <Button Grid.Column="1" Grid.Row="1">Button 5</Button>
-        <Button Grid.Column="2" Grid.Row="1">Button 6</Button>
-        <Button Grid.Row="2">Button 7</Button>
-        <Button Grid.Column="1" Grid.Row="2">Button 8</Button>
-        <Button Grid.Column="2" Grid.Row="2">Button 9</Button>
+        <Button x:Name="Node00" Grid.Column="0"></Button>
+        <Button x:Name="Node01" Grid.Column="1"></Button>
+        <Button x:Name="Node02" Grid.Column="2"></Button>
+        <Button x:Name="Node03" Grid.Column="3"></Button>
+        <Button x:Name="Node04" Grid.Column="4"></Button>
+        <Button x:Name="Node05" Grid.Column="5"></Button>
+        <Button x:Name="Node06" Grid.Column="6"></Button>
+        <Button x:Name="Node07" Grid.Column="7"></Button>
+        <Button x:Name="Node08" Grid.Column="8"></Button>
+        <Button x:Name="Node09" Grid.Column="9"></Button>
+
+        <Button x:Name="Node10" Grid.Row="1" Grid.Column="0"></Button>
+        <Button x:Name="Node11" Grid.Row="1" Grid.Column="1"></Button>
+        <Button x:Name="Node12" Grid.Row="1" Grid.Column="2"></Button>
+        <Button x:Name="Node13" Grid.Row="1" Grid.Column="3"></Button>
+        <Button x:Name="Node14" Grid.Row="1" Grid.Column="4"></Button>
+        <Button x:Name="Node15" Grid.Row="1" Grid.Column="5"></Button>
+        <Button x:Name="Node16" Grid.Row="1" Grid.Column="6"></Button>
+        <Button x:Name="Node17" Grid.Row="1" Grid.Column="7"></Button>
+        <Button x:Name="Node18" Grid.Row="1" Grid.Column="8"></Button>
+        <Button x:Name="Node19" Grid.Row="1" Grid.Column="9"></Button>
+
+        <Button x:Name="Node20" Grid.Row="2" Grid.Column="0"></Button>
+        <Button x:Name="Node21" Grid.Row="2" Grid.Column="1"></Button>
+        <Button x:Name="Node22" Grid.Row="2" Grid.Column="2"></Button>
+        <Button x:Name="Node23" Grid.Row="2" Grid.Column="3"></Button>
+        <Button x:Name="Node24" Grid.Row="2" Grid.Column="4"></Button>
+        <Button x:Name="Node25" Grid.Row="2" Grid.Column="5"></Button>
+        <Button x:Name="Node26" Grid.Row="2" Grid.Column="6"></Button>
+        <Button x:Name="Node27" Grid.Row="2" Grid.Column="7"></Button>
+        <Button x:Name="Node28" Grid.Row="2" Grid.Column="8"></Button>
+        <Button x:Name="Node29" Grid.Row="2" Grid.Column="9"></Button>
+
+        <Button x:Name="Node30" Grid.Row="3" Grid.Column="0"></Button>
+        <Button x:Name="Node31" Grid.Row="3" Grid.Column="1"></Button>
+        <Button x:Name="Node32" Grid.Row="3" Grid.Column="2"></Button>
+        <Button x:Name="Node33" Grid.Row="3" Grid.Column="3"></Button>
+        <Button x:Name="Node34" Grid.Row="3" Grid.Column="4"></Button>
+        <Button x:Name="Node35" Grid.Row="3" Grid.Column="5"></Button>
+        <Button x:Name="Node36" Grid.Row="3" Grid.Column="6"></Button>
+        <Button x:Name="Node37" Grid.Row="3" Grid.Column="7"></Button>
+        <Button x:Name="Node38" Grid.Row="3" Grid.Column="8"></Button>
+        <Button x:Name="Node39" Grid.Row="3" Grid.Column="9"></Button>
+
+        <Button x:Name="Node40" Grid.Row="4" Grid.Column="0"></Button>
+        <Button x:Name="Node41" Grid.Row="4" Grid.Column="1"></Button>
+        <Button x:Name="Node42" Grid.Row="4" Grid.Column="2"></Button>
+        <Button x:Name="Node43" Grid.Row="4" Grid.Column="3"></Button>
+        <Button x:Name="Node44" Grid.Row="4" Grid.Column="4"></Button>
+        <Button x:Name="Node45" Grid.Row="4" Grid.Column="5"></Button>
+        <Button x:Name="Node46" Grid.Row="4" Grid.Column="6"></Button>
+        <Button x:Name="Node47" Grid.Row="4" Grid.Column="7"></Button>
+        <Button x:Name="Node48" Grid.Row="4" Grid.Column="8"></Button>
+        <Button x:Name="Node49" Grid.Row="4" Grid.Column="9"></Button>
+
+
     </Grid>
 </Window>
