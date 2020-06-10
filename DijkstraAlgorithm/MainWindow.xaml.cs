@@ -29,6 +29,7 @@ namespace DijkstraAlgorithm
         public int starterCol;
         public int finishRow;
         public int finishCol;
+        public string coords;
         public MainWindow()
         {
             InitializeComponent();
@@ -46,6 +47,7 @@ namespace DijkstraAlgorithm
                     Button b = new Button();
                     Thickness margin = b.Margin;
                     margin.Left = 2;
+                    b.Content = $"{i} {j}";
                     margin.Bottom = 2;
                     b.Margin = margin;
                     b.Width = 50;
@@ -63,6 +65,7 @@ namespace DijkstraAlgorithm
                 
                     Button clicked = (Button)sender;
                     clicked.Background = Brushes.Orange;
+                    coords = (string)clicked.Content;
                     starterRow = (int)clicked.GetValue(Grid.RowProperty);
                     starterCol = (int)clicked.GetValue(Grid.ColumnProperty);
                     startPointBtn = false;
@@ -110,8 +113,24 @@ namespace DijkstraAlgorithm
             endPointBtn = false;
             wallsBtn = false;
 
+            //fix
+            // iterate thro all buttons, find the 4 you need if not found, go again(infinite while loop)
+            //maybe Grid.RowProperty ??
+            //gamePanel.Children.Cast<Button>().First(e => Grid.GetRow(e) == 1 && Grid.GetColumn(e) == 1).Background = Brushes.Black;
+            //gamePanel.Children.Cast<Button>().ElementAt(34).Background = Brushes.Red;
+            //gamePanel.Children.Cast<Button>().Where(e => (Grid.GetRow(e)) == 0 && (Grid.GetColumn(e)) == 0).First().Background = Brushes.Black;
+            int counter = 0;
+            foreach(Button b in gamePanel.Children.Cast<Button>())
+            {
+                b.Background = Brushes.Black;
+                int i = 1;
+                int j = 1;
+                if (b.Content.Equals(coords))
+                {
+                    b.Background = Brushes.Red;
+                }
+            }
 
-            gamePanel.Children.Cast<Button>().First(e => Grid.GetRow(e) == 1 && Grid.GetColumn(e) == 1).Background = Brushes.Black;
         }
     }
 }
