@@ -5,102 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DijkstraAlgorithm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="520">
+        Title="MainWindow" Height="auto" Width="auto">
     <Border Padding="10">
         <StackPanel>
             <Grid Margin="10 0 0 20">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
                 </Grid.ColumnDefinitions>
-
                 <Button x:Name="StartPoint" Click="StartPoint_Click" Margin=" 0 0 20 0" Grid.Column="0">Start Point</Button>
                 <Button x:Name="EndPoint" Click="EndPoint_Click"  Margin=" 0 0 20 0" Grid.Column="1" >End Point</Button>
                 <Button x:Name="Walls" Click="Walls_Click" Margin=" 0 0 20 0" Grid.Column="2">Walls</Button>
                 <Button x:Name="StartDijkstra" Click="StartDijkstra_Click" Margin=" 0 0 20 0" Grid.Column="3">Start Dijkstra</Button>
             </Grid>
-            
-            
-            <Grid>
+
+            <Grid Margin="0,0,-0.351,0.039">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50" />
-                    <ColumnDefinition Width="50" />
-                    <ColumnDefinition Width="50" />
-                    <ColumnDefinition Width="50" />
-                    <ColumnDefinition Width="50" />
-                    <ColumnDefinition Width="50" />
-                    <ColumnDefinition Width="50" />
-                    <ColumnDefinition Width="50" />
-                    <ColumnDefinition Width="50" />
-                    <ColumnDefinition Width="50" />
-
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="50" />
 
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
 
-                <Button x:Name="Node00" Click="ChangeColor" Margin="2" Grid.Column="0" Content="00"></Button>
-                <Button x:Name="Node01" Click="ChangeColor" Margin="2" Grid.Column="1" Content="01"></Button>
-                <Button x:Name="Node02" Click="ChangeColor" Margin="2" Grid.Column="2"></Button>
-                <Button x:Name="Node03" Click="ChangeColor" Margin="2" Grid.Column="3"></Button>
-                <Button x:Name="Node04" Click="ChangeColor" Margin="2" Grid.Column="4"></Button>
-                <Button x:Name="Node05" Click="ChangeColor" Margin="2" Grid.Column="5"></Button>
-                <Button x:Name="Node06" Click="ChangeColor" Margin="2" Grid.Column="6"></Button>
-                <Button x:Name="Node07" Click="ChangeColor" Margin="2" Grid.Column="7"></Button>
-                <Button x:Name="Node08" Click="ChangeColor" Margin="2" Grid.Column="8"></Button>
-                <Button x:Name="Node09" Click="ChangeColor" Margin="2" Grid.Column="9"></Button>
-                                       
-                <Button x:Name="Node10" Click="ChangeColor" Margin="2" Grid.Row="1" Grid.Column="0"></Button>
-                <Button x:Name="Node11" Click="ChangeColor" Margin="2" Grid.Row="1" Grid.Column="1"></Button>
-                <Button x:Name="Node12" Click="ChangeColor" Margin="2" Grid.Row="1" Grid.Column="2"></Button>
-                <Button x:Name="Node13" Click="ChangeColor" Margin="2" Grid.Row="1" Grid.Column="3"></Button>
-                <Button x:Name="Node14" Click="ChangeColor" Margin="2" Grid.Row="1" Grid.Column="4"></Button>
-                <Button x:Name="Node15" Click="ChangeColor" Margin="2" Grid.Row="1" Grid.Column="5"></Button>
-                <Button x:Name="Node16" Click="ChangeColor" Margin="2" Grid.Row="1" Grid.Column="6"></Button>
-                <Button x:Name="Node17" Click="ChangeColor" Margin="2" Grid.Row="1" Grid.Column="7"></Button>
-                <Button x:Name="Node18" Click="ChangeColor" Margin="2" Grid.Row="1" Grid.Column="8"></Button>
-                <Button x:Name="Node19" Click="ChangeColor" Margin="2" Grid.Row="1" Grid.Column="9"></Button>
-                                        
-                <Button x:Name="Node20" Click="ChangeColor" Margin="2" Grid.Row="2" Grid.Column="0"></Button>
-                <Button x:Name="Node21" Click="ChangeColor" Margin="2" Grid.Row="2" Grid.Column="1"></Button>
-                <Button x:Name="Node22" Click="ChangeColor" Margin="2" Grid.Row="2" Grid.Column="2"></Button>
-                <Button x:Name="Node23" Click="ChangeColor" Margin="2" Grid.Row="2" Grid.Column="3"></Button>
-                <Button x:Name="Node24" Click="ChangeColor" Margin="2" Grid.Row="2" Grid.Column="4"></Button>
-                <Button x:Name="Node25" Click="ChangeColor" Margin="2" Grid.Row="2" Grid.Column="5"></Button>
-                <Button x:Name="Node26" Click="ChangeColor" Margin="2" Grid.Row="2" Grid.Column="6"></Button>
-                <Button x:Name="Node27" Click="ChangeColor" Margin="2" Grid.Row="2" Grid.Column="7"></Button>
-                <Button x:Name="Node28" Click="ChangeColor" Margin="2" Grid.Row="2" Grid.Column="8"></Button>
-                <Button x:Name="Node29" Click="ChangeColor" Margin="2" Grid.Row="2" Grid.Column="9"></Button>
-                                        
-                <Button x:Name="Node30" Click="ChangeColor" Margin="2" Grid.Row="3" Grid.Column="0"></Button>
-                <Button x:Name="Node31" Click="ChangeColor" Margin="2" Grid.Row="3" Grid.Column="1"></Button>
-                <Button x:Name="Node32" Click="ChangeColor" Margin="2" Grid.Row="3" Grid.Column="2"></Button>
-                <Button x:Name="Node33" Click="ChangeColor" Margin="2" Grid.Row="3" Grid.Column="3"></Button>
-                <Button x:Name="Node34" Click="ChangeColor" Margin="2" Grid.Row="3" Grid.Column="4"></Button>
-                <Button x:Name="Node35" Click="ChangeColor" Margin="2" Grid.Row="3" Grid.Column="5"></Button>
-                <Button x:Name="Node36" Click="ChangeColor" Margin="2" Grid.Row="3" Grid.Column="6"></Button>
-                <Button x:Name="Node37" Click="ChangeColor" Margin="2" Grid.Row="3" Grid.Column="7"></Button>
-                <Button x:Name="Node38" Click="ChangeColor" Margin="2" Grid.Row="3" Grid.Column="8"></Button>
-                <Button x:Name="Node39" Click="ChangeColor" Margin="2" Grid.Row="3" Grid.Column="9"></Button>
-                                        
-                <Button x:Name="Node40" Click="ChangeColor" Margin="2" Grid.Row="4" Grid.Column="0"></Button>
-                <Button x:Name="Node41" Click="ChangeColor" Margin="2" Grid.Row="4" Grid.Column="1"></Button>
-                <Button x:Name="Node42" Click="ChangeColor" Margin="2" Grid.Row="4" Grid.Column="2"></Button>
-                <Button x:Name="Node43" Click="ChangeColor" Margin="2" Grid.Row="4" Grid.Column="3"></Button>
-                <Button x:Name="Node44" Click="ChangeColor" Margin="2" Grid.Row="4" Grid.Column="4"></Button>
-                <Button x:Name="Node45" Click="ChangeColor" Margin="2" Grid.Row="4" Grid.Column="5"></Button>
-                <Button x:Name="Node46" Click="ChangeColor" Margin="2" Grid.Row="4" Grid.Column="6"></Button>
-                <Button x:Name="Node47" Click="ChangeColor" Margin="2" Grid.Row="4" Grid.Column="7"></Button>
-                <Button x:Name="Node48" Click="ChangeColor" Margin="2" Grid.Row="4" Grid.Column="8"></Button>
-                <Button x:Name="Node49" Click="ChangeColor" Margin="2" Grid.Row="4" Grid.Column="9"></Button>
-                                        
+
+                <UniformGrid  x:Name="gamePanel">
+                    
+                </UniformGrid>
 
             </Grid>
 

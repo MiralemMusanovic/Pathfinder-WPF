@@ -21,27 +21,49 @@ namespace DijkstraAlgorithm
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
+            gamePanel.Rows = 10;
+            gamePanel.Columns = 20;
+            for (int i = 0; i < gamePanel.Rows; i++)
+            {
+                for(int j = 0; j < gamePanel.Columns; j++)
+                {
+                    Button b = new Button();
+                    Thickness margin = b.Margin;
+                    margin.Left = 2;
+                    margin.Bottom = 2;
+                    b.Margin = margin;
+                    b.Content = $"{i} {j}";
+                    b.Width = 50;
+                    b.Height = 50;
+                    b.Click += ChangeColor;
+                    gamePanel.Children.Add(b);
+                }
+
+            }
         }
 
         public bool isStartPoint = false;
         public bool isEndPoint = false;
         public bool isWalls = false;
-        public string coords;
+        public string starterCoords;
+        public string endCoords;
 
         private void ChangeColor(object sender, RoutedEventArgs e)
         {   
             if (isStartPoint == true)
             {
                 ((Button)sender).Background = Brushes.Orange;
-                coords = (string)((Button)sender).Content;
+                starterCoords = (string)((Button)sender).Content;
                 isStartPoint = false;
             }
             else if (isEndPoint == true)
             {
                 ((Button)sender).Background = Brushes.DodgerBlue;
+                endCoords = (string)((Button)sender).Content;
                 isEndPoint = false;
             }
             else if (isWalls == true)
