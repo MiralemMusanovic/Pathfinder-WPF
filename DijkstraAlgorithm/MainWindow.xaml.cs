@@ -25,11 +25,8 @@ namespace DijkstraAlgorithm
         public bool startPointBtn = false;
         public bool endPointBtn = false;
         public bool wallsBtn = false;
-        public int starterRow;
-        public int starterCol;
-        public int finishRow;
-        public int finishCol;
-        public string coords;
+        public string startCoords;
+        public string endCoords;
         public MainWindow()
         {
             InitializeComponent();
@@ -47,7 +44,7 @@ namespace DijkstraAlgorithm
                     Button b = new Button();
                     Thickness margin = b.Margin;
                     margin.Left = 2;
-                    b.Content = $"{i} {j}";
+                    b.Content = $"{i}{j}";
                     margin.Bottom = 2;
                     b.Margin = margin;
                     b.Width = 50;
@@ -63,20 +60,17 @@ namespace DijkstraAlgorithm
             if (startPointBtn == true)
             {
                 
-                    Button clicked = (Button)sender;
-                    clicked.Background = Brushes.Orange;
-                    coords = (string)clicked.Content;
-                    starterRow = (int)clicked.GetValue(Grid.RowProperty);
-                    starterCol = (int)clicked.GetValue(Grid.ColumnProperty);
-                    startPointBtn = false;
+                Button clicked = (Button)sender;
+                clicked.Background = Brushes.Orange;
+                startCoords = (string)clicked.Content;
+                
+                startPointBtn = false;
             }
             else if (endPointBtn == true)
             {
                 
                 Button clicked = (Button)sender;
-                clicked.Background = Brushes.DodgerBlue;
-                finishRow = (int)clicked.GetValue(Grid.RowProperty);
-                finishCol = (int)clicked.GetValue(Grid.ColumnProperty);
+                clicked.Background = Brushes.Green;
                 endPointBtn = false;
             }
             else if (wallsBtn == true)
@@ -120,15 +114,36 @@ namespace DijkstraAlgorithm
             //gamePanel.Children.Cast<Button>().ElementAt(34).Background = Brushes.Red;
             //gamePanel.Children.Cast<Button>().Where(e => (Grid.GetRow(e)) == 0 && (Grid.GetColumn(e)) == 0).First().Background = Brushes.Black;
             int counter = 0;
-            foreach(Button b in gamePanel.Children.Cast<Button>())
+
+            int startRow = int.Parse(startCoords[0].ToString());
+            int startCol = int.Parse(startCoords[1].ToString());
+            int[] up = new int[] { startRow - 1 , startCol };
+            int[] right = new int[] { startRow, startCol+1 };
+            int[] down = new int[] { startRow+1, startCol };
+            int[] left = new int[] { startRow, startCol - 1 };
+
+            foreach (Button b in gamePanel.Children.Cast<Button>())
             {
-                b.Background = Brushes.Black;
-                int i = 1;
-                int j = 1;
-                if (b.Content.Equals(coords))
+                if (b.Content.Equals(string.Join("", up)))
                 {
-                    b.Background = Brushes.Red;
+                    b.Background = Brushes.Blue;
+                    counter++;
+                    up[0] = startRow - 1 - counter;
+                    // watch video
                 }
+                else if(b.Content.Equals(string.Join("", right)))
+                {
+                    b.Background = Brushes.Blue;
+                }
+                else if (b.Content.Equals(string.Join("", down)))
+                {
+                    b.Background = Brushes.Blue;
+                }
+                else if (b.Content.Equals(string.Join("", left)))
+                {
+                    b.Background = Brushes.Blue;
+                }
+
             }
 
         }
