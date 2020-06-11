@@ -25,6 +25,7 @@ namespace DijkstraAlgorithm
         public bool startPointBtn = false;
         public bool endPointBtn = false;
         public bool wallsBtn = false;
+        public bool endFound = false;
         public string startCoords;
         public string endCoords;
         public MainWindow()
@@ -71,6 +72,7 @@ namespace DijkstraAlgorithm
                 
                 Button clicked = (Button)sender;
                 clicked.Background = Brushes.Green;
+                endCoords = (string)clicked.Content;
                 endPointBtn = false;
             }
             else if (wallsBtn == true)
@@ -113,7 +115,6 @@ namespace DijkstraAlgorithm
             //gamePanel.Children.Cast<Button>().First(e => Grid.GetRow(e) == 1 && Grid.GetColumn(e) == 1).Background = Brushes.Black;
             //gamePanel.Children.Cast<Button>().ElementAt(34).Background = Brushes.Red;
             //gamePanel.Children.Cast<Button>().Where(e => (Grid.GetRow(e)) == 0 && (Grid.GetColumn(e)) == 0).First().Background = Brushes.Black;
-            int counter = 0;
 
             int startRow = int.Parse(startCoords[0].ToString());
             int startCol = int.Parse(startCoords[1].ToString());
@@ -126,22 +127,33 @@ namespace DijkstraAlgorithm
             {
                 if (b.Content.Equals(string.Join("", up)))
                 {
-                    b.Background = Brushes.Blue;
-                    counter++;
-                    up[0] = startRow - 1 - counter;
-                    // watch video
+                    if(b.Background != Brushes.Orange)
+                    {
+                        b.Background = Brushes.Blue;
+                        if (b.Content.Equals(endCoords))
+                            endFound = true;
+                    }
                 }
                 else if(b.Content.Equals(string.Join("", right)))
                 {
-                    b.Background = Brushes.Blue;
+                     if (b.Background != Brushes.Orange)
+                    {
+                        b.Background = Brushes.Blue;
+                    }
                 }
                 else if (b.Content.Equals(string.Join("", down)))
                 {
-                    b.Background = Brushes.Blue;
+                    if (b.Background != Brushes.Orange)
+                    {
+                        b.Background = Brushes.Blue;
+                    }
                 }
                 else if (b.Content.Equals(string.Join("", left)))
                 {
-                    b.Background = Brushes.Blue;
+                    if (b.Background != Brushes.Orange)
+                    {
+                        b.Background = Brushes.Blue;
+                    }
                 }
 
             }
