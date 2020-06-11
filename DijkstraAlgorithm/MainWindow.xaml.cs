@@ -37,7 +37,7 @@ namespace DijkstraAlgorithm
         private void makeGrid()
         {
             gamePanel.Rows = 10;
-            gamePanel.Columns = 20;
+            gamePanel.Columns = 10;
             for (int i = 0; i < gamePanel.Rows; i++)
             {
                 for (int j = 0; j < gamePanel.Columns; j++)
@@ -52,6 +52,7 @@ namespace DijkstraAlgorithm
                     b.Height = 50;
                     b.Click += ChangeColor;
                     gamePanel.Children.Add(b);
+                    
                 }
             }
         }
@@ -62,7 +63,7 @@ namespace DijkstraAlgorithm
             {
                 
                 Button clicked = (Button)sender;
-                clicked.Background = Brushes.Orange;
+                clicked.Background = Brushes.Green;
                 startCoords = (string)clicked.Content;
                 
                 startPointBtn = false;
@@ -71,7 +72,7 @@ namespace DijkstraAlgorithm
             {
                 
                 Button clicked = (Button)sender;
-                clicked.Background = Brushes.Green;
+                clicked.Background = Brushes.Red;
                 endCoords = (string)clicked.Content;
                 endPointBtn = false;
             }
@@ -115,49 +116,67 @@ namespace DijkstraAlgorithm
             //gamePanel.Children.Cast<Button>().First(e => Grid.GetRow(e) == 1 && Grid.GetColumn(e) == 1).Background = Brushes.Black;
             //gamePanel.Children.Cast<Button>().ElementAt(34).Background = Brushes.Red;
             //gamePanel.Children.Cast<Button>().Where(e => (Grid.GetRow(e)) == 0 && (Grid.GetColumn(e)) == 0).First().Background = Brushes.Black;
-
+            
             int startRow = int.Parse(startCoords[0].ToString());
             int startCol = int.Parse(startCoords[1].ToString());
             int[] up = new int[] { startRow - 1 , startCol };
             int[] right = new int[] { startRow, startCol+1 };
             int[] down = new int[] { startRow+1, startCol };
             int[] left = new int[] { startRow, startCol - 1 };
-
-            foreach (Button b in gamePanel.Children.Cast<Button>())
+            int counter = 1;
+            for(int i = 0; i < 3; i++)
             {
-                if (b.Content.Equals(string.Join("", up)))
+                foreach (Button b in gamePanel.Children.Cast<Button>())
                 {
-                    if(b.Background != Brushes.Orange)
+                    if (b.Content.Equals(string.Join("", up)))
                     {
-                        b.Background = Brushes.Blue;
-                        if (b.Content.Equals(endCoords))
-                            endFound = true;
-                    }
-                }
-                else if(b.Content.Equals(string.Join("", right)))
-                {
-                     if (b.Background != Brushes.Orange)
-                    {
-                        b.Background = Brushes.Blue;
-                    }
-                }
-                else if (b.Content.Equals(string.Join("", down)))
-                {
-                    if (b.Background != Brushes.Orange)
-                    {
-                        b.Background = Brushes.Blue;
-                    }
-                }
-                else if (b.Content.Equals(string.Join("", left)))
-                {
-                    if (b.Background != Brushes.Orange)
-                    {
-                        b.Background = Brushes.Blue;
-                    }
-                }
+                        if (b.Background != Brushes.Green)
+                        {
+                            if (b.Content.Equals(endCoords))
+                                endFound = true;
 
+
+
+                            up[0] = startRow - 1 - counter;
+                            counter++;
+                            b.Background = Brushes.Blue;
+                        }
+                    }
+                    else if (b.Content.Equals(string.Join("", right)))
+                    {
+                        if (b.Background != Brushes.Green)
+                        {
+                            if (b.Content.Equals(endCoords))
+                                endFound = true;
+                            right[1] = startCol + 1 + counter;
+                            counter++;
+                            b.Background = Brushes.Blue;
+                        }
+                    }
+                    else if (b.Content.Equals(string.Join("", down)))
+                    {
+                        if (b.Background != Brushes.Green)
+                        {
+                            if (b.Content.Equals(endCoords))
+                                endFound = true;
+                            down[0] = startRow + 1 + counter;
+                            counter++;
+                            b.Background = Brushes.Blue;
+                        }
+                    }
+                    else if (b.Content.Equals(string.Join("", left)))
+                    {
+                        if (b.Background != Brushes.Green)
+                        {
+                            if (b.Content.Equals(endCoords))
+                                endFound = true;
+                            left[1] = startCol - 1 - counter;
+                            counter++;
+                            b.Background = Brushes.Blue;
+                        }
+                    }
+                }
             }
-
         }
     }
 }
