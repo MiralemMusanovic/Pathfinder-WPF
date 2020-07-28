@@ -22,6 +22,23 @@ namespace DijkstraAlgorithm
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Our dictionary of nodes. Allows us to quickly change a nodes value
+        // through its name (the key).
+        static Dictionary<string, Node> nodeDict = new Dictionary<string, Node>();
+
+        // The list of routes.
+        static List<Route> routes = new List<Route>();
+
+        // This set allows us to quickly check which nodes we have already
+        // visited.
+        static HashSet<string> unvisited = new HashSet<string>();
+
+
+
+
+        /// <summary>
+        /// ///////////////////
+        /// </summary>
         public bool startPointBtn = false;
         public bool endPointBtn = false;
         public bool wallsBtn = false;
@@ -39,7 +56,6 @@ namespace DijkstraAlgorithm
             gamePanel.Rows = 10;
             gamePanel.Columns = 10;
             for (int i = 0; i < gamePanel.Rows; i++)
-            {
                 for (int j = 0; j < gamePanel.Columns; j++)
                 {
                     Button b = new Button();
@@ -52,9 +68,7 @@ namespace DijkstraAlgorithm
                     b.Height = 50;
                     b.Click += ChangeColor;
                     gamePanel.Children.Add(b);
-                    
                 }
-            }
         }
 
         private void ChangeColor(object sender, RoutedEventArgs e)
@@ -125,25 +139,18 @@ namespace DijkstraAlgorithm
             int[] left = new int[] { startRow, startCol - 1 };
             int counter = 1;
             for(int i = 0; i < 3; i++)
-            {
                 foreach (Button b in gamePanel.Children.Cast<Button>())
                 {
                     if (b.Content.Equals(string.Join("", up)))
-                    {
                         if (b.Background != Brushes.Green)
                         {
                             if (b.Content.Equals(endCoords))
                                 endFound = true;
-
-
-
                             up[0] = startRow - 1 - counter;
                             counter++;
                             b.Background = Brushes.Blue;
                         }
-                    }
                     else if (b.Content.Equals(string.Join("", right)))
-                    {
                         if (b.Background != Brushes.Green)
                         {
                             if (b.Content.Equals(endCoords))
@@ -152,9 +159,7 @@ namespace DijkstraAlgorithm
                             counter++;
                             b.Background = Brushes.Blue;
                         }
-                    }
                     else if (b.Content.Equals(string.Join("", down)))
-                    {
                         if (b.Background != Brushes.Green)
                         {
                             if (b.Content.Equals(endCoords))
@@ -163,9 +168,7 @@ namespace DijkstraAlgorithm
                             counter++;
                             b.Background = Brushes.Blue;
                         }
-                    }
                     else if (b.Content.Equals(string.Join("", left)))
-                    {
                         if (b.Background != Brushes.Green)
                         {
                             if (b.Content.Equals(endCoords))
@@ -174,9 +177,7 @@ namespace DijkstraAlgorithm
                             counter++;
                             b.Background = Brushes.Blue;
                         }
-                    }
                 }
-            }
         }
     }
 }
